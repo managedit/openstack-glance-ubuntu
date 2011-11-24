@@ -1,0 +1,126 @@
+Description: Make streaming from swift actually work.
+Author: Brian Waldon <brian.waldon@rackspace.com>
+Commit: 4847ceb59fe35481fd42ddc9369b7d3814eca721
+diff -Naurp glance-2011.3.orig//glance/store/swift.py glance-2011.3//glance/store/swift.py
+--- glance-2011.3.orig//glance/store/swift.py	2011-09-21 16:46:35.000000000 -0400
++++ glance-2011.3//glance/store/swift.py	2011-09-27 14:26:46.231166002 -0400
+@@ -260,7 +260,7 @@ class Store(glance.store.base.Store):
+         #            "Expected %s byte file, Swift has %s bytes" %
+         #            (expected_size, obj_size))
+ 
+-        return (resp_body, None)
++        return (resp_body, resp_headers.get('content-length'))
+ 
+     def _make_swift_connection(self, auth_url, user, key):
+         """
+diff -Naurp glance-2011.3.orig//glance/tests/functional/test_swift.py glance-2011.3//glance/tests/functional/test_swift.py
+--- glance-2011.3.orig//glance/tests/functional/test_swift.py	2011-09-21 16:46:35.000000000 -0400
++++ glance-2011.3//glance/tests/functional/test_swift.py	2011-09-27 14:26:46.231166002 -0400
+@@ -385,3 +385,86 @@ class TestSwift(test_api.TestApi):
+                          hashlib.md5("*" * FIVE_MB).hexdigest())
+ 
+         self.stop_servers()
++
++    @skip_if_disabled
++    def test_remote_image(self):
++        """
++        Ensure we can retrieve an image that was not stored by glance itself
++        """
++        self.cleanup()
++
++        self.start_servers(**self.__dict__.copy())
++
++        api_port = self.api_port
++        registry_port = self.registry_port
++
++        # POST /images with public image named Image1
++        image_data = "*" * FIVE_MB
++        headers = {'Content-Type': 'application/octet-stream',
++                   'X-Image-Meta-Name': 'Image1',
++                   'X-Image-Meta-Is-Public': 'True'}
++        path = "http://%s:%d/v1/images" % ("0.0.0.0", self.api_port)
++        http = httplib2.Http()
++        response, content = http.request(path, 'POST', headers=headers,
++                                         body=image_data)
++        self.assertEqual(response.status, 201, content)
++        data = json.loads(content)
++        self.assertEqual(data['image']['checksum'],
++                         hashlib.md5(image_data).hexdigest())
++        self.assertEqual(data['image']['size'], FIVE_MB)
++        self.assertEqual(data['image']['name'], "Image1")
++        self.assertEqual(data['image']['is_public'], True)
++
++        # GET /images/1 and make sure data was uploaded
++        path = "http://%s:%d/v1/images/1" % ("0.0.0.0", self.api_port)
++        http = httplib2.Http()
++        response, content = http.request(path, 'GET')
++        self.assertEqual(response.status, 200)
++        self.assertEqual(response['content-length'], str(FIVE_MB))
++
++        self.assertEqual(content, "*" * FIVE_MB)
++        self.assertEqual(hashlib.md5(content).hexdigest(),
++                         hashlib.md5("*" * FIVE_MB).hexdigest())
++
++        # use this header as the location for the next image
++        swift_location = response['x-image-meta-location']
++
++        # POST /images with public image named Image1 without uploading data
++        image_data = "*" * FIVE_MB
++        headers = {'Content-Type': 'application/octet-stream',
++                   'X-Image-Meta-Name': 'Image1',
++                   'X-Image-Meta-Is-Public': 'True',
++                   'X-Image-Meta-Location': swift_location}
++        path = "http://%s:%d/v1/images" % ("0.0.0.0", self.api_port)
++        http = httplib2.Http()
++        response, content = http.request(path, 'POST', headers=headers)
++        self.assertEqual(response.status, 201, content)
++        data = json.loads(content)
++        self.assertEqual(data['image']['checksum'], None)
++        self.assertEqual(data['image']['size'], 0)
++        self.assertEqual(data['image']['name'], "Image1")
++        self.assertEqual(data['image']['is_public'], True)
++
++        # GET /images/2 ensuring the data already in swift is accessible
++        path = "http://%s:%d/v1/images/2" % ("0.0.0.0", self.api_port)
++        http = httplib2.Http()
++        response, content = http.request(path, 'GET')
++        self.assertEqual(response.status, 200)
++        self.assertEqual(response['content-length'], str(FIVE_MB))
++
++        self.assertEqual(content, "*" * FIVE_MB)
++        self.assertEqual(hashlib.md5(content).hexdigest(),
++                         hashlib.md5("*" * FIVE_MB).hexdigest())
++
++        # DELETE /images/1 and /image/2
++        # Verify image and all chunks are gone...
++        path = "http://%s:%d/v1/images/1" % ("0.0.0.0", self.api_port)
++        http = httplib2.Http()
++        response, content = http.request(path, 'DELETE')
++        self.assertEqual(response.status, 200)
++        path = "http://%s:%d/v1/images/2" % ("0.0.0.0", self.api_port)
++        http = httplib2.Http()
++        response, content = http.request(path, 'DELETE')
++        self.assertEqual(response.status, 200)
++
++        self.stop_servers()
+diff -Naurp glance-2011.3.orig//glance/tests/unit/test_swift_store.py glance-2011.3//glance/tests/unit/test_swift_store.py
+--- glance-2011.3.orig//glance/tests/unit/test_swift_store.py	2011-09-21 16:46:35.000000000 -0400
++++ glance-2011.3//glance/tests/unit/test_swift_store.py	2011-09-27 14:26:46.235166002 -0400
+@@ -198,7 +198,7 @@ class TestStore(unittest.TestCase):
+         """Test a "normal" retrieval of an image in chunks"""
+         loc = get_location_from_uri("swift://user:key@auth_address/glance/2")
+         (image_swift, image_size) = self.store.get(loc)
+-        self.assertEqual(image_size, None)
++        self.assertEqual(image_size, 5120)
+ 
+         expected_data = "*" * FIVE_KB
+         data = ""
+@@ -216,7 +216,7 @@ class TestStore(unittest.TestCase):
+         loc = get_location_from_uri("swift+http://user:key@auth_address/"
+                                     "glance/2")
+         (image_swift, image_size) = self.store.get(loc)
+-        self.assertEqual(image_size, None)
++        self.assertEqual(image_size, 5120)
+ 
+         expected_data = "*" * FIVE_KB
+         data = ""
