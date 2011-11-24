@@ -1,4 +1,1 @@
 sql_conn.patch
-# ubuntu patches begin here
-lp_845788_glance_client_zero_length.patch
-lp_850425_remote_swift_image_streaming.patch
