@@ -1,3 +1,59 @@
+glance (2011.3+201111281606-0mit1~11.gbp98895c) oneiric; urgency=low
+
+  ** SNAPSHOT build @98895c7552fb6b0bc5e288ba5c24296c4c62f386 **
+
+  [ Thierry Carrez ]
+  * [3ab30174] Final versioning for Diablo.
+
+  [ Mark McLoughlin ]
+  * [a0ecd5c5] Point tools/rfc.sh at the correct branch
+
+  [ Jay Pipes ]
+  * [536435f5] Fixes LP Bug#845788
+  * [9c7492e3] Fixes LP Bug #850685
+
+  [ Brian Waldon ]
+  * [dba6b9ff] Make remote swift image streaming functional
+  * [4333c2b1] Returning functionality of s3 backend to stream remote images
+
+  [ Jay Pipes ]
+  * [ee1e25b4] Fixes LP Bug#860862 - Security creds still shown
+
+  [ Tomas Hancock ]
+  * [f2f052df] Fixes LP Bug#872276 - small typo in error message
+
+  [ Kevin L. Mitchell ]
+  * [a5127191] Better document using Glance with Keystone.
+
+  [ Jay Pipes ]
+  * [f186d3c0] Fixes LP Bug#844618 - SQLAlchemy errors not logged
+
+  [ James E. Blair ]
+  * [4b675211] Add .gitreview config file for gerrit.
+
+  [ Brian Lamar ]
+  * [23e0fbfb] Removed 'mox==0.5.0' and replaced with just 'mox' in tools/pip-requires.
+
+  [ Brian Waldon ]
+  * [5b26c53c] Remove 'location' from POST/PUT image responses
+
+  [ Kevin L. Mitchell ]
+  * [c810328b] Fix Keystone API skew issue with Glance client.
+
+  [ Mike Lundy ]
+  * [184024d4] load gettext in __init__ to fix '_ is not defined'
+
+  [ Dan Prince ]
+  * [45731155] Update 'glance show' to print a valid URI. Fixes bug #888370.
+
+  [ Rick Harris ]
+  * [b5f8fe1a] Using Keystone's new port number 35357.
+  * [3f08f394] Making prefetcher call create_stores.
+
+  [ Managed I.T. CI ]
+
+ -- Managed I.T. CI <ci@managedit.ie>  Mon, 28 Nov 2011 16:06:19 +0000
+
 glance (2011.3~20111021-0mit2) oneiric; urgency=low
 
   * Bump version for PPA rebuild.
@@ -94,7 +150,7 @@ glance (2011.3~d4~20110811.980-0ubuntu1) oneiric; urgency=low
 
  -- Chuck Short <zulcss@ubuntu.com>  Fri, 12 Aug 2011 05:23:21 -0400
 
-glance (2011.3~d3~20110709.152-0ubuntu2) UNRELEASED; urgency=low
+glance (2011.3~d3~20110709.152-0ubuntu2) oneiric; urgency=low
 
   [ Adam Gandelman ]
   * Add python-xattr to Depends of python-glance
@@ -107,7 +163,7 @@ glance (2011.3~d3~20110709.152-0ubuntu2) UNRELEASED; urgency=low
 
  -- Monty Taylor <mordred@inaugust.com>  Tue, 02 Aug 2011 08:55:11 -0700
 
-glance (2011.3~d3~20110709.152-0ubuntu1) UNRELEASED; urgency=low
+glance (2011.3~d3~20110709.152-0ubuntu1) oneiric; urgency=low
 
   * New upstream snapshot.
   * Remove python-daemon as a dependency again.
@@ -140,7 +196,7 @@ glance (2011.3~d2-0ubuntu1) oneiric; urgency=low
 
  -- Chuck Short <zulcss@ubuntu.com>  Thu, 30 Jun 2011 17:20:19 +0100
 
-glance (2011.3~d1-0ubuntu2) UNRELEASED; urgency=low
+glance (2011.3~d1-0ubuntu2) oneiric; urgency=low
 
   *  debian/control: Dropped python-daemon, its not used anywhere.
 
