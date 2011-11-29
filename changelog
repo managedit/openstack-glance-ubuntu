@@ -1,4 +1,12 @@
-glance (2011.3+20111128-0mit1~14.gbp98895c) oneiric; urgency=low
+glance (2011.3+20111130~1908-0mit1~15.gbp98895c) oneiric; urgency=high
+
+  ** SNAPSHOT build @98895c7552fb6b0bc5e288ba5c24296c4c62f386 **
+
+  * UNRELEASED
+
+ -- Managed I.T. CI <ci@managedit.ie>  Tue, 29 Nov 2011 19:08:16 +0000
+
+glance (2011.3+20111128-0mit1~14.gbp98895c) oneiric; urgency=high
 
   ** SNAPSHOT build @98895c7552fb6b0bc5e288ba5c24296c4c62f386 **
 
@@ -6,7 +14,7 @@ glance (2011.3+20111128-0mit1~14.gbp98895c) oneiric; urgency=low
 
  -- Managed I.T. CI <ci@managedit.ie>  Mon, 28 Nov 2011 20:34:16 +0000
 
-glance (2011.3+20111128-0mit1~13.gbp98895c) oneiric; urgency=low
+glance (2011.3+20111128-0mit1~13.gbp98895c) oneiric; urgency=high
 
   ** SNAPSHOT build @98895c7552fb6b0bc5e288ba5c24296c4c62f386 **
 
@@ -14,7 +22,7 @@ glance (2011.3+20111128-0mit1~13.gbp98895c) oneiric; urgency=low
 
  -- Managed I.T. CI <ci@managedit.ie>  Mon, 28 Nov 2011 19:32:46 +0000
 
-glance (2011.3+20111128-0mit1~11.gbp98895c) oneiric; urgency=low
+glance (2011.3+20111128-0mit1~11.gbp98895c) oneiric; urgency=high
 
   ** SNAPSHOT build @98895c7552fb6b0bc5e288ba5c24296c4c62f386 **
 
@@ -70,19 +78,19 @@ glance (2011.3+20111128-0mit1~11.gbp98895c) oneiric; urgency=low
 
  -- Managed I.T. CI <ci@managedit.ie>  Mon, 28 Nov 2011 16:06:19 +0000
 
-glance (2011.3~20111021-0mit2) oneiric; urgency=low
+glance (2011.3~20111021-0mit2) oneiric; urgency=high
 
   * Bump version for PPA rebuild.
 
  -- Kiall Mac Innes <kiall@managedit.ie>  Sat, 22 Oct 2011 06:54:56 +0100
 
-glance (2011.3~20111021-0mit1) oneiric; urgency=low
+glance (2011.3~20111021-0mit1) oneiric; urgency=high
 
   * New Upstream Version (84e5d7fa0d38e6831570384db3cb1d6bd35b42b4)
 
  -- Kiall Mac Innes <kiall@managedit.ie>  Fri, 21 Oct 2011 19:48:38 +0100
 
-glance (2011.3-0ubuntu4) oneiric; urgency=low
+glance (2011.3-0ubuntu4) oneiric; urgency=high
 
   [ Adam Gandelman ]
   * debian/glance.postinst: Restrict permissions of /etc/glance/ and
@@ -90,7 +98,7 @@ glance (2011.3-0ubuntu4) oneiric; urgency=low
 
  -- Chuck Short <zulcss@ubuntu.com>  Fri, 30 Sep 2011 16:00:33 -0400
 
-glance (2011.3-0ubuntu3) oneiric; urgency=low
+glance (2011.3-0ubuntu3) oneiric; urgency=high
 
   [Scott Moser]
   * fix bug with glance and swift driver that resulted in zero length
@@ -102,14 +110,14 @@ glance (2011.3-0ubuntu3) oneiric; urgency=low
 
  -- Chuck Short <zulcss@ubuntu.com>  Tue, 27 Sep 2011 14:49:05 -0400
 
-glance (2011.3-0ubuntu2) oneiric; urgency=low
+glance (2011.3-0ubuntu2) oneiric; urgency=high
 
   * debian/glance.{postinst,postrm}: Fix syntax error, /dev/null redirect
     typos.  Only remove user/group in .postrm if they exist. (LP: #857021)
 
  -- Adam Gandelman <adamg@canonical.com>  Thu, 22 Sep 2011 21:03:26 -0700
 
-glance (2011.3-0ubuntu1) oneiric; urgency=low
+glance (2011.3-0ubuntu1) oneiric; urgency=high
 
   * New upstream release. 
   * debian/glance.postinst: Add glance group and add glance user to it.
@@ -117,7 +125,7 @@ glance (2011.3-0ubuntu1) oneiric; urgency=low
 
  -- Chuck Short <zulcss@ubuntu.com>  Thu, 22 Sep 2011 10:45:33 -0400
 
-glance (2011.3~rc~20110915.r1007-0ubuntu1) oneiric; urgency=low
+glance (2011.3~rc~20110915.r1007-0ubuntu1) oneiric; urgency=high
 
   [ Chuck Short ]
   * New upstream release. 
@@ -128,19 +136,19 @@ glance (2011.3~rc~20110915.r1007-0ubuntu1) oneiric; urgency=low
 
  -- Monty Taylor <mordred@inaugust.com>  Mon, 19 Sep 2011 13:03:41 -0400
 
-glance (2011.3~rc~20110908.r1005-0ubuntu1) oneiric; urgency=low
+glance (2011.3~rc~20110908.r1005-0ubuntu1) oneiric; urgency=high
 
   * New upstream release. 
 
  -- Chuck Short <zulcss@ubuntu.com>  Fri, 09 Sep 2011 14:59:27 -0400
 
-glance (2011.3~rc~20110831.1002-0ubuntu1) oneiric; urgency=low
+glance (2011.3~rc~20110831.1002-0ubuntu1) oneiric; urgency=high
 
   * New upstream release. 
 
  -- Chuck Short <zulcss@ubuntu.com>  Fri, 02 Sep 2011 13:50:13 -0400
 
-glance (2011.3~d4-0ubuntu1) oneiric; urgency=low
+glance (2011.3~d4-0ubuntu1) oneiric; urgency=high
 
   [Chuck Short]
   * New upstream release.
@@ -160,13 +168,13 @@ glance (2011.3~d4-0ubuntu1) oneiric; urgency=low
 
  -- Chuck Short <zulcss@ubuntu.com>  Fri, 26 Aug 2011 10:13:39 -0400
 
-glance (2011.3~d4~20110811.980-0ubuntu1) oneiric; urgency=low
+glance (2011.3~d4~20110811.980-0ubuntu1) oneiric; urgency=high
 
   * New upstream release. 
 
  -- Chuck Short <zulcss@ubuntu.com>  Fri, 12 Aug 2011 05:23:21 -0400
 
-glance (2011.3~d3~20110709.152-0ubuntu2) oneiric; urgency=low
+glance (2011.3~d3~20110709.152-0ubuntu2) oneiric; urgency=high
 
   [ Adam Gandelman ]
   * Add python-xattr to Depends of python-glance
@@ -179,7 +187,7 @@ glance (2011.3~d3~20110709.152-0ubuntu2) oneiric; urgency=low
 
  -- Monty Taylor <mordred@inaugust.com>  Tue, 02 Aug 2011 08:55:11 -0700
 
-glance (2011.3~d3~20110709.152-0ubuntu1) oneiric; urgency=low
+glance (2011.3~d3~20110709.152-0ubuntu1) oneiric; urgency=high
 
   * New upstream snapshot.
   * Remove python-daemon as a dependency again.
@@ -188,20 +196,20 @@ glance (2011.3~d3~20110709.152-0ubuntu1) oneiric; urgency=low
 
  -- Soren Hansen <soren@ubuntu.com>  Tue, 12 Jul 2011 21:57:41 +0200
 
-glance (2011.3~d3~20110707.151-0ubuntu1) oneiric; urgency=low
+glance (2011.3~d3~20110707.151-0ubuntu1) oneiric; urgency=high
 
   * New upstream release.
   * debian/control: python-hashlib
 
  -- Chuck Short <zulcss@ubuntu.com>  Fri, 08 Jul 2011 12:59:49 -0400
 
-glance (2011.3~d2-0ubuntu2) oneiric; urgency=low
+glance (2011.3~d2-0ubuntu2) oneiric; urgency=high
 
   * debian/control: Add python-httplib2. 
 
  -- Chuck Short <zulcss@ubuntu.com>  Thu, 30 Jun 2011 17:42:46 +0100
 
-glance (2011.3~d2-0ubuntu1) oneiric; urgency=low
+glance (2011.3~d2-0ubuntu1) oneiric; urgency=high
 
   [Chuck Short]
   * New upstream release.
@@ -212,19 +220,19 @@ glance (2011.3~d2-0ubuntu1) oneiric; urgency=low
 
  -- Chuck Short <zulcss@ubuntu.com>  Thu, 30 Jun 2011 17:20:19 +0100
 
-glance (2011.3~d1-0ubuntu2) oneiric; urgency=low
+glance (2011.3~d1-0ubuntu2) oneiric; urgency=high
 
   *  debian/control: Dropped python-daemon, its not used anywhere.
 
  -- Chuck Short <zulcss@ubuntu.com>  Thu, 23 Jun 2011 15:37:22 -0400
 
-glance (2011.3~d1-0ubuntu1) oneiric; urgency=low
+glance (2011.3~d1-0ubuntu1) oneiric; urgency=high
 
   * New Upstream release.
 
  -- Chuck Short <zulcss@ubuntu.com>  Thu, 02 Jun 2011 09:38:43 -0400
 
-glance (2011.2~bzr132-0ubuntu1) oneiric; urgency=low
+glance (2011.2~bzr132-0ubuntu1) oneiric; urgency=high
 
   [ Soren Hansen ]
   * Fix accidentally inverted logic that protects against upgrading
@@ -244,13 +252,13 @@ glance (2011.2~bzr132-0ubuntu1) oneiric; urgency=low
 
  -- Soren Hansen <soren@ubuntu.com>  Wed, 25 May 2011 15:57:15 +0200
 
-glance (2011.2-0ubuntu1) natty; urgency=low
+glance (2011.2-0ubuntu1) natty; urgency=high
 
   * New upstream version. 
 
  -- Chuck Short <zulcss@ubuntu.com>  Fri, 15 Apr 2011 08:18:16 -0400
 
-glance (2011.2~bzr108-0ubuntu1) natty; urgency=low
+glance (2011.2~bzr108-0ubuntu1) natty; urgency=high
 
   [ Soren Hansen ]
   * Run test suite during build
@@ -269,7 +277,7 @@ glance (2011.2~bzr108-0ubuntu1) natty; urgency=low
 
  -- Chuck Short <zulcss@ubuntu.com>  Tue, 12 Apr 2011 09:52:06 -0400
 
-glance (0.1.3pre~bzr39-0ubuntu1) natty; urgency=low
+glance (0.1.3pre~bzr39-0ubuntu1) natty; urgency=high
 
   * Initial upload.
 
