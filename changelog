@@ -1,3 +1,14 @@
+glance (2011.3+20120104~0001-0mit1~16.gbp6baaaa) oneiric; urgency=low
+
+  ** SNAPSHOT build @6baaaa02e24a44c4a3511862e01dae039a2b2aba **
+
+  [ Russell Bryant ]
+  * [6baaaa02] Add a LICENSE file.
+
+  [ Managed I.T. CI ]
+
+ -- Managed I.T. CI <ci@managedit.ie>  Wed, 04 Jan 2012 00:01:55 +0000
+
 glance (2011.3+20111130~1908-0mit1~15.gbp98895c) oneiric; urgency=high
 
   ** SNAPSHOT build @98895c7552fb6b0bc5e288ba5c24296c4c62f386 **
