@@ -1,3 +1,14 @@
+glance (2011.3+20120106~0000-0mit1~17.gbp845646) oneiric; urgency=low
+
+  ** SNAPSHOT build @845646eaa7d1b733e11b18ad34dd787011b15c0a **
+
+  [ James E. Blair ]
+  * [845646ea] Rename .glance-venv to .venv.
+
+  [ Managed I.T. CI ]
+
+ -- Managed I.T. CI <ci@managedit.ie>  Fri, 06 Jan 2012 00:00:44 +0000
+
 glance (2011.3+20120104~0001-0mit1~16.gbp6baaaa) oneiric; urgency=low
 
   ** SNAPSHOT build @6baaaa02e24a44c4a3511862e01dae039a2b2aba **
