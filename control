@@ -41,6 +41,7 @@ Depends: ${python:Depends}, ${misc:Depends},
  python-sqlalchemy-ext | python-sqlalchemy (<< 0.6.3-2),
  python-pastedeploy,
  python-argparse,
+ python-httplib2,
  python-migrate,
  python-kombu,
  python-xattr
