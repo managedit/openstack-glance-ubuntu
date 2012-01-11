@@ -1,3 +1,26 @@
+glance (2011.3+20120111~2247-0mit1~18.gbpc44bc3) oneiric; urgency=low
+
+  ** SNAPSHOT build @c44bc3d443b9da72c05d6c74e7969127dbc08416 **
+
+  [ Paul Bourke ]
+  * [34aa8969] Fix bug 891738
+
+  [ Brian Lamar ]
+  * [2b97b7e5] Removed bin/glance's TTY detection.
+
+  [ Ewan Mellor ]
+  * [97cbf819] Bug #909538: Swift upload via Glance logs the password it's using
+
+  [ Stuart McLaren ]
+  * [5d7bd218] Fix for bug 901609, when using v2 auth should use /v2.0/tokens path.
+
+  [ Major Hayden ]
+  * [ea52a016] Fixes keystone auth test failures in python 2.6.
+
+  [ Managed I.T. CI ]
+
+ -- Managed I.T. CI <ci@managedit.ie>  Wed, 11 Jan 2012 22:47:44 +0000
+
 glance (2011.3+20120106~0000-0mit1~17.gbp845646) oneiric; urgency=low
 
   ** SNAPSHOT build @845646eaa7d1b733e11b18ad34dd787011b15c0a **
