@@ -1,3 +1,14 @@
+glance (2011.3.1~20120117~1549-0mit1~22.gbp5e7c88) oneiric; urgency=medium
+
+  ** SNAPSHOT build @5e7c88026ef59580951b9289bade5c6a97572a1f **
+
+  [ Hengqing Hu ]
+  * [5e7c8802] Fixes incorrect URI scheme for s3 backend
+
+  [ Managed I.T. CI ]
+
+ -- Managed I.T. CI <ci@managedit.ie>  Tue, 17 Jan 2012 15:49:44 +0000
+
 glance (2011.3.1~20120117~1223-0mit1~21.gbpc989c5) oneiric; urgency=medium
 
   ** SNAPSHOT build @c989c54023e23ad00f4a06cb86f424b1305df8ed **
