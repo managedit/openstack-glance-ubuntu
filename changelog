@@ -1,4 +1,12 @@
-glance (2011.3+20120117~0000-0mit1~20.gbpc989c5) oneiric; urgency=low
+glance (2011.3.1~20120117~1223-0mit1~21.gbpc989c5) oneiric; urgency=medium
+
+  ** SNAPSHOT build @c989c54023e23ad00f4a06cb86f424b1305df8ed **
+
+  * UNRELEASED
+
+ -- Managed I.T. CI <ci@managedit.ie>  Tue, 17 Jan 2012 12:23:08 +0000
+
+glance (2011.3+20120117~0000-0mit1~20.gbpc989c5) oneiric; urgency=medium
 
   ** SNAPSHOT build @c989c54023e23ad00f4a06cb86f424b1305df8ed **
 
@@ -9,7 +17,7 @@ glance (2011.3+20120117~0000-0mit1~20.gbpc989c5) oneiric; urgency=low
 
  -- Managed I.T. CI <ci@managedit.ie>  Tue, 17 Jan 2012 00:01:00 +0000
 
-glance (2011.3+20120112~0000-0mit1~19.gbpc281cc) oneiric; urgency=low
+glance (2011.3+20120112~0000-0mit1~19.gbpc281cc) oneiric; urgency=medium
 
   ** SNAPSHOT build @c281cc357625432d95964aed460e38009b2f047a **
 
@@ -21,7 +29,7 @@ glance (2011.3+20120112~0000-0mit1~19.gbpc281cc) oneiric; urgency=low
 
  -- Managed I.T. CI <ci@managedit.ie>  Thu, 12 Jan 2012 00:00:53 +0000
 
-glance (2011.3+20120111~2247-0mit1~18.gbpc44bc3) oneiric; urgency=low
+glance (2011.3+20120111~2247-0mit1~18.gbpc44bc3) oneiric; urgency=medium
 
   ** SNAPSHOT build @c44bc3d443b9da72c05d6c74e7969127dbc08416 **
 
@@ -44,7 +52,7 @@ glance (2011.3+20120111~2247-0mit1~18.gbpc44bc3) oneiric; urgency=low
 
  -- Managed I.T. CI <ci@managedit.ie>  Wed, 11 Jan 2012 22:47:44 +0000
 
-glance (2011.3+20120106~0000-0mit1~17.gbp845646) oneiric; urgency=low
+glance (2011.3+20120106~0000-0mit1~17.gbp845646) oneiric; urgency=medium
 
   ** SNAPSHOT build @845646eaa7d1b733e11b18ad34dd787011b15c0a **
 
@@ -55,7 +63,7 @@ glance (2011.3+20120106~0000-0mit1~17.gbp845646) oneiric; urgency=low
 
  -- Managed I.T. CI <ci@managedit.ie>  Fri, 06 Jan 2012 00:00:44 +0000
 
-glance (2011.3+20120104~0001-0mit1~16.gbp6baaaa) oneiric; urgency=low
+glance (2011.3+20120104~0001-0mit1~16.gbp6baaaa) oneiric; urgency=medium
 
   ** SNAPSHOT build @6baaaa02e24a44c4a3511862e01dae039a2b2aba **
 
