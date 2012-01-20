@@ -1,3 +1,15 @@
+glance (2011.3.2~20120120~0001-0mit1~23.gbp5b86b1) oneiric; urgency=medium
+
+  ** SNAPSHOT build @5b86b1fdf789b98006f033963066a07f91e2106f **
+
+  [ Mark McLoughlin ]
+  * [ffcd0ca8] Final versioning for 2011.3.1
+  * [5b86b1fd] Open 2011.3.2 development
+
+  [ Managed I.T. CI ]
+
+ -- Managed I.T. CI <ci@managedit.ie>  Fri, 20 Jan 2012 00:01:13 +0000
+
 glance (2011.3.1~20120117~1549-0mit1~22.gbp5e7c88) oneiric; urgency=medium
 
   ** SNAPSHOT build @5e7c88026ef59580951b9289bade5c6a97572a1f **
